@@ -1,0 +1,10 @@
+#AUTOR: Alexis Uriarte
+#PROYECTO FINAL DE ITI: APLICACIÓN EN PYTHON
+
+#CREACION DE FUNCIONES:
+
+
+#PROCESO:
+#se realiza todo el algoritmo del trabajo
+
+#EJECUCIÓ DEL PROGRAMA:
