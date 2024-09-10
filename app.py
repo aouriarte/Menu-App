@@ -56,6 +56,61 @@ def muestraSubMenu(categoria):
         print("| G | ========== SALIR =========== |")
         print("|","="*32,"|")
 
+#funcion sumaPrecios, obtiene como parámetros la opcion categoria y opcion escogida en el menu principal y submenu
+def sumaPrecios(opcion, categoria):
+    #si categoria es igual a Desayuno verifica la opción escogida dentro de la lista y retorna el precio
+    if categoria == "A":
+        if opcion == "A":
+            return 4.50
+        elif opcion == "B":
+            return 5.00
+        elif opcion == "C":
+            return 9.00
+        elif opcion == "D":
+            return 8.00
+        elif opcion == "E" or opcion == "F" or opcion == "G":
+            return 7.00
+    #si categoria es igual a Almuerzo verifica la opción escogida dentro de la lista y retorna el precio
+    elif categoria == "B":
+        if opcion == "A":
+            return 4.50
+        elif opcion == "B":
+            return 5.00
+        elif opcion == "C":
+            return 9.00
+        elif opcion == "D":
+            return 8.00
+        elif opcion == "E" or opcion == "F" or opcion == "G":
+            return 7.00
+    #si categoria es igual a Cena verifica la opción escogida dentro de la lista y retorna el precio
+    elif categoria == "C":
+        if opcion == "A":
+            return 9.50
+        elif opcion == "B":
+            return 7.50
+        elif opcion == "C":
+            return 6.00
+        elif opcion == "D":
+            return 6.00
+        elif opcion == "E":
+            return 5.50
+        elif opcion == "F":
+            return 4.00
+
+#funcion factura, obtiene como parámetro el precio de las comidas seleccionadas
+def factura(subTotal):
+    igv = round(subTotal * 0.18, 2) #calcula el igv y lo redondea a sólo dos decimales
+    total = subTotal + igv #obtiene el precio de las comidas más el igv
+    print("|        BOLETA DE VENTAS          |")
+    print("|","="*32,"|")
+    print("| Subtotal     :              ",subTotal,"|")
+    print("| IGV          :             ",igv,"|")
+    print("| Total a pagar:             ",total,"|")
+    print("|                                  |")
+    print("|      Gracias por tu compra       |")
+    print("|","="*32,"|")
+
+
 #PROCESO:
 #se realiza todo el algoritmo del trabajo
 
