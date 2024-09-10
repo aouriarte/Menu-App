@@ -112,6 +112,49 @@ def factura(subTotal):
 
 
 #PROCESO:
-#se realiza todo el algoritmo del trabajo
+#funcion realizaCompra, se realiza todo el algoritmo del trabajo
+def realizaCompra():
+    subTotal = 0 #guarda el precio de las comidas
+    seguir = "SI" #variable para guardar la respuesta del usuario para seguir comprando o no
 
+    while True: #True indica que la condición siempre será verdad pero luego uso break dentro del cuerpo para cortarlo y que no sea un bucle infinito
+        muestraMenu() #muestra el menu principal
+        categoria = input("Selecciona una opción:") #guarda la elección del usuario
+        print()
+        if categoria == "D": #si es verdadera el usuario sale, se corta el bucle y empieza de nuevo
+            break
+        elif categoria in ["A", "B", "C"]: #si una de estas es verdadera se muestra el submenu
+            muestraSubMenu(categoria)
+            opcion = input("Selecciona una opción:") #guarda la opcion selecccionada
+            if opcion == "J": #si esa verdadero continua el bucle vuelve al menu principal
+                continue 
+            elif opcion in ["A", "B", "C", "D", "E", "F", "G"]: #selecciona las comidas
+                precio = sumaPrecios(opcion, categoria) #obtiene el precio de las comidas apartir de la funcion sumaPrecios
+                subTotal += precio #va sumando el precio de las comidas
+                print("¡Excelente elección!")
+                seguir = input("¿Deseas algo más?(SI/NO):")
+                if seguir == "NO": #si es verdadera el bucle se termina y muestra la factura
+                    print()
+                    break
+                elif seguir == "SI": #sino el usuario sigue comprando
+                    print()
+                    continue
+                else: #oportunidad para el usuario de regresar al menú principal
+                    print("¡Opción inválida!")
+                    input("Presiona Enter para regresar")
+                    print()
+                    
+            else: #oportunidad para el usuario de regresar al menú principal
+                print("¡Debes seleccionar una opción válida!")
+                input("Presiona Enter para regresar")
+                print()
+                
+        else: #oportunidad para el usuario de empezar de nuevo
+            print("¡Debes seleccionar una opción válida!")
+            input("Presiona Enter para empezar de nuevo")
+            print()
+
+    factura(subTotal)
+    
 #EJECUCIÓ DEL PROGRAMA:
+realizaCompra()
