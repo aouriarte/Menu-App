@@ -5,7 +5,7 @@
 
 ## 🗒️ Enunciado
 
-El _restaurante Punto Azul_ necesita necesita mejorar la gestión, para esto se ha decidido sistematizar
+El _restaurante Punto Azul_ necesita mejorar la gestión, para esto se ha decidido sistematizar
 el proceso de facturación utilizando el lenguaje de programación de **Python**.
 
 ## 🎯 Objetivos del Proyecto
